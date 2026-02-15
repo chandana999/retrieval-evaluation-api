@@ -1,0 +1,7 @@
+retriever,context_recall,context_entity_recall,noise_sensitivity,latency_seconds,langsmith_total_cost_usd,langsmith_total_tokens,langsmith_llm_calls,langsmith_total_latency
+naive_retriever,0.9459,0.3995,0,1305.85,0.5021974,599251,11,1300.897594
+bm25_retriever,0.7959,0.3686,0,695.13,0.2383729,284374,11,690.148184
+contextual_compression_retriever,0.8459,0.4516,0,539.99,0.1882083,230739,11,535.001465
+multi_query_retriever,0.9459,0.437,0,1418.08,0.5125234,618043,11,1413.2356809999999
+parent_document_retriever,0.8459,0.3607,0,1062.09,0.2296093,277933,11,1052.02688
+ensemble_retriever,0.9459,0.4557,0,2022.09,0.4753361,588941,11,2015.7200289999998

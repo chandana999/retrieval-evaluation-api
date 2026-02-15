@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Advanced Retrieval Evaluation</title>
+  <link rel="stylesheet" href="/assets/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <a href="#" class="back-link" onclick="history.back(); return false;">← Back</a>
+      <h1 class="title">Advanced Retrieval Evaluation</h1>
+    </header>
+
+    <!-- Progress / Workflow Tracker -->
+    <section class="workflow-section">
+      <div class="workflow-steps">
+        <div class="workflow-step" id="step-loading" data-step="loading">
+          <span class="step-icon"></span>
+          <span class="step-label">Loading Dataset</span>
+        </div>
+        <div class="workflow-step" id="step-building" data-step="building">
+          <span class="step-icon"></span>
+          <span class="step-label">Building Retrievers</span>
+        </div>
+        <div class="workflow-step" id="step-evaluating" data-step="evaluating">
+          <span class="step-icon"></span>
+          <span class="step-label">RAGAS Evaluation</span>
+        </div>
+        <div class="workflow-step" id="step-summary" data-step="summary">
+          <span class="step-icon"></span>
+          <span class="step-label">Evaluation Summary</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Evaluation Summary -->
+    <section class="summary-section card">
+      <div class="card-header">
+        <span class="card-icon">📄</span>
+        <h2>Evaluation Summary</h2>
+      </div>
+      <div class="card-body">
+        <p id="executive-summary-text" class="summary-placeholder">
+          High-level summary of retriever performance: which strategy (naive, BM25, contextual compression, multi-query, parent document, ensemble) performs best on context recall, entity recall, and noise sensitivity. Click "Run Evaluation" or "Load Previous Results" to populate.
+        </p>
+      </div>
+    </section>
+
+    <!-- Status Log -->
+    <section class="status-log-section card">
+      <button type="button" class="status-log-toggle collapsible" id="log-toggle">
+        <span class="card-icon">📋</span>
+        <span class="toggle-label">Status Log <span id="log-count">(0)</span></span>
+        <span class="collapse-arrow">▼</span>
+      </button>
+      <div class="card-body log-body" id="log-body">
+        <div id="log-entries" class="log-entries">
+          <p class="log-empty" id="log-empty">No log entries yet. Click "Run Evaluation" to start.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Retriever Comparison / Root Cause Analysis -->
+    <section class="retriever-analysis-section card">
+      <div class="card-header">
+        <span class="card-icon">🔍</span>
+        <h2>Retriever Comparison</h2>
+        <span class="status-pill" id="rca-status">PENDING</span>
+      </div>
+      <div class="card-body">
+        <p class="subtitle">Detailed RAGAS metrics by retriever strategy</p>
+        <div id="retriever-results" class="retriever-results">
+          <p class="results-placeholder">Results will appear here after evaluation completes.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Raw Evaluation Results -->
+    <section class="deep-dive-section card">
+      <div class="card-header">
+        <span class="card-icon">📦</span>
+        <h2>Raw Evaluation Data</h2>
+      </div>
+      <div class="card-body">
+        <p class="subtitle">Full JSON output from the retrieval evaluation run</p>
+        <button class="show-details-btn" id="show-details-btn">► Show Raw JSON</button>
+        <div id="deep-dive-content" class="deep-dive-content hidden">
+          <pre id="deep-dive-raw"></pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- Actions -->
+    <section class="actions-section">
+      <button class="btn btn-primary" id="run-btn">▶ Run Evaluation</button>
+      <button class="btn btn-secondary" id="load-results-btn">Load Previous Results</button>
+    </section>
+  </div>
+
+  <script src="/assets/app.js"></script>
+</body>
+</html>
