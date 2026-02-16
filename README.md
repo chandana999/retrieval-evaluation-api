@@ -6,8 +6,8 @@ A web-based UI for evaluating multiple RAG retrieval strategies using **RAGAS** 
 
 ## 📸 Execution Screenshot
 
-<!-- Add your screenshot here. Example: ![Evaluation UI](docs/screenshot.png) -->
-> **Add your screenshot:** Place an image (e.g. `screenshot.png`) in this folder and uncomment the line above, or replace with: `![Evaluation UI](./screenshot.png)`
+![Evaluation UI](./advancedretrieval.png)
+
 
 ---
 
@@ -182,4 +182,4 @@ Then open **http://localhost:8001** in your browser.
 
 ---
 
-*Part of the AI Engineering Bootcamp (Advanced Retrieval / RAG Evaluation).*
+
